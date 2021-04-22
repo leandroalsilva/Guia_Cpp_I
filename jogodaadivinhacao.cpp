@@ -44,6 +44,8 @@ int main()
     }
     cout << "Fim de jogo!" << endl;
     cout << "Você acertou o número secreto em " << tentativas << " tentativas" << endl;
+    cout.precision(2); //precisão das casas decimais
+    cout << fixed; //modificador fixo da vírgula
     cout << "Sua pontuação é " << pontos << endl;
 }
 
