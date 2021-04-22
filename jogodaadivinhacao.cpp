@@ -11,6 +11,7 @@ int main()
     const int NUMERO_SECRETO = 42;
     bool nao_acertou = true;
     int tentativas = 0;
+    double pontos = 1000;
 
     while (nao_acertou)
     {
@@ -21,6 +22,8 @@ int main()
         cin >> chute;
         bool acertou = chute == NUMERO_SECRETO;
         bool maior = chute > NUMERO_SECRETO;
+
+        double pontos_perdidos = abs((chute - NUMERO_SECRETO)/2.0); 
 
         cout << "O valor do seu chute é: " << chute << endl;
             
@@ -37,9 +40,11 @@ int main()
         {
             cout << "Seu chute foi menor que o número secreto!" << endl;
         }
+        pontos = pontos - pontos_perdidos;
     }
     cout << "Fim de jogo!" << endl;
     cout << "Você acertou o número secreto em " << tentativas << " tentativas" << endl;
+    cout << "Sua pontuação é " << pontos << endl;
 }
 
 //Para compilar no cmd, estando na pasta do arquivo:
