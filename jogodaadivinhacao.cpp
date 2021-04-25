@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std; //indica que as funções serão usadas com frequência
 
 int main()
@@ -10,7 +12,8 @@ int main()
     cout << "Fácil (F), Médio (M) ou Difícil (D)" << endl;
 
     //Variáveis
-    const int NUMERO_SECRETO = 42;
+    srand(time(NULL));
+    const int NUMERO_SECRETO = rand() % 100; //Intervalo de 0 a 99
     bool nao_acertou = true;
     int tentativas;
     double pontos = 1000;
@@ -65,6 +68,7 @@ int main()
     if (nao_acertou)
     {
         cout << "Você perdeu! Tente novamente!" << endl;
+            cout << "O número secreto pseudo aleatório era: " << NUMERO_SECRETO << endl;
     }else 
     {
         cout << "Você acertou o número secreto em " << tentativas << " tentativas" << endl;
