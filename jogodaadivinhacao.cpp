@@ -23,7 +23,7 @@ int main()
         bool acertou = chute == NUMERO_SECRETO;
         bool maior = chute > NUMERO_SECRETO;
 
-        double pontos_perdidos = abs((chute - NUMERO_SECRETO)/2.0); 
+        double pontos_perdidos = abs((long)((chute - NUMERO_SECRETO)/2.0)); 
 
         cout << "O valor do seu chute é: " << chute << endl;
             
