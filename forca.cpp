@@ -4,11 +4,11 @@ using namespace std; //indica que as funções serão usadas com frequência
 
 const string PALAVRA_SECRETA = "MELANCIA";
 
-bool letra_existe(char c)
+bool letra_existe(char chute)
 {
-    for (int i = 0; i < PALAVRA_SECRETA.size(); i++)
+    for (char letra : PALAVRA_SECRETA)
     {
-        if (c == PALAVRA_SECRETA[i])
+        if (chute == letra)
         {
             return true;
         }
