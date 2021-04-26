@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <fstream>
 using namespace std; //indica que as funções serão usadas com frequência
 
 const string PALAVRA_SECRETA = "MELANCIA";
@@ -92,9 +93,28 @@ void chuta()
     cout << endl;
 }
 
+void le_arquivo()
+{
+    ifstream arquivo;
+    arquivo.open("palavras.txt");
+    
+    int quantidade_palavras;
+    arquivo >> quantidade_palavras;
+
+    cout << "O arquivo possui " <<quantidade_palavras <<" palavras" << endl;
+
+    for (int i = 0; i < quantidade_palavras; i++)
+    {
+        string palavra_lida;
+        arquivo >> palavra_lida;
+        cout << "Na linha " << i << ": " << palavra_lida << endl;
+    }
+}
+
 int main()
 {
     imprime_cabecalho();
+    le_arquivo();
     while (nao_acertou() && nao_enforcou())
     {
         imprime_erros();
